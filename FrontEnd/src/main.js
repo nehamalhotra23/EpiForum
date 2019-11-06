@@ -12,6 +12,7 @@ import './styles.css';
 
 console.log(window.localStorage.getItem('jsonToken'));
 console.log(window.localStorage.getItem('specificQuestion'));
+// console.log(window.localStorage.setItem("answerDescription", response);
 
 $(document).ready(function () {
     getQuestions();
@@ -138,9 +139,9 @@ function detailsuccess(response) {
 
     console.log(JSON.parse(response));
     window.localStorage.setItem("specificQuestion", response);
+    
     window.location.href = "/question.html"
-    testerrr()
-    $(".details").append("<li> +it worked  </li>");
+    
 }
 
 function detailfailure(response) {
@@ -220,7 +221,14 @@ function apiCallPostAnswer(answerDescription, jsonToken) {
     return promise;
 }
 function postedASuccess(response) {
-    console.log("here");
+    window.localStorage.getItem("specificQuestion");
+    // window.location.href = "/question.html"
+    var answerResponse= JSON.parse(window.localStorage.getItem("specificQuestion"));
+    console.log(answerResponse);
+    getSpecificDetails(answerResponse.id);
+
+
+
 }
 function postFailure(response) {
     alert(response)
