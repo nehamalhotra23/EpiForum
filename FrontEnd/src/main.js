@@ -117,11 +117,12 @@ function getQuestionSuccess(response) {
 
 }
 
+
 function getSpecificDetails(id) {
     gSQ(id);
     console.log(id);
 }
-
+// short for get specific question. 
 function gSQ(id) {
     gsQ2(id).then(detailsuccess, detailfailure)
 }
@@ -151,6 +152,10 @@ function getQuestionFailure(response) {
 
 
 //Answer
+
+
+
+
 
 
 
